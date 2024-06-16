@@ -1,0 +1,724 @@
+<html>
+  <head>
+    <title>Shrijit Raj's | Article #1</title>
+    <link rel="icon" href="./snippet/icon.png">
+        <style>
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+}
+
+body::before {
+  --size: 60px;
+  --line: hsl(0 0% 0% / 0.15);
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1 {
+	margin: 0;
+	font-family: monospace;
+	text-transform: uppercase;
+}
+
+.header-title {
+	padding: 8rem 0 2rem;
+}
+
+.content {
+	width: 700px;
+	max-width: calc(100% - 2rem);
+	margin: 0 auto;
+}
+
+.drop {
+	--drop: clamp(1.5rem, 1vw + 1rem, 6rem); 	
+	height: var(--drop);
+	width: calc(var(--drop) * 2.25);
+	aspect-ratio: 4 / 3;
+	float: left;
+	position: relative;
+	shape-outside: inset(0 0 0 0);
+}
+
+.drop::after {
+	content: "THE";
+	position: absolute;
+	inset: 0;
+	display: grid;
+	line-height: 2rem;
+	font-size: calc(var(--drop) * 1);
+	font-weight: 600;
+	text-align: left;
+	place-items: start;
+}
+
+.columns {
+	display: flex;
+	gap: var(--gap);
+}
+
+:root {
+	--size: 100;
+	--y: 200;
+	--x: 50;
+	--gap: 1rem;
+}
+
+.outside {
+	position: relative;
+	width: calc(var(--size) * 1px);
+	height: calc(100% + (var(--size) * 1px));
+}
+
+.column:first-of-type .outside {
+	float: right;
+  shape-outside: circle(calc(var(--size) * 1px) at 100% calc(var(--y) * 1%));
+}
+.column:last-of-type .outside {
+	float: left;
+  shape-outside: circle(calc(var(--size) * 1px) at 0 calc(var(--y) * 1%));
+}
+
+.columns p {
+	font-size: .875rem;
+	text-align: justify;
+}
+
+.outside {
+	float: right;
+	shape-outside: circle(50%);
+}
+
+/* header */
+header {
+  height: 15%;
+  width: 15%;
+  position: fixed;
+  filter: invert();
+  z-index: 2;
+}
+
+.header-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+.headingp{
+  font-size: larger;
+  font-family: monospace;
+}
+
+.snippet{
+  display: inline;
+  margin-top: -3%;
+}
+
+/* arrow */
+.center-con {
+    display: flex;
+    justify-content: right;
+}
+.round {
+    position: absolute;
+    border: 2px solid #000000;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+  filter: invert();
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+/* RADIO BUTTON */
+
+:root {
+	--radius: 10px;
+	--border: 4px;
+	--height: 45px;
+  --speed: 0.25s;
+}
+
+.tabs {
+  margin-left: 15%;
+  margin-right: 15%;
+	height: var(--height);
+	display: grid;
+	grid-auto-flow: column;
+	background: hsl(0 0% 0%);
+	border-radius: var(--radius);
+	grid-auto-columns: 1fr;
+	position: relative;
+	border: var(--border) solid hsl(0 0% 0%);
+}
+
+.tabs {
+	--ease: linear(
+    0, 0.1641 3.52%, 0.311 7.18%,
+    0.4413 10.99%, 0.5553 14.96%,
+    0.6539 19.12%, 0.738 23.5%,
+    0.8086 28.15%, 0.8662 33.12%,
+    0.9078 37.92%, 0.9405 43.12%,
+    0.965 48.84%, 0.9821 55.28%,
+    0.992 61.97%, 0.9976 70.09%, 1
+  );
+}
+
+.tabs > input,
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.tabs:has(:checked:nth-of-type(1)) { --active: 0; }
+.tabs:has(:checked:nth-of-type(2)) { --active: 1; }
+.tabs:has(:checked:nth-of-type(3)) { --active: 2; }
+.tabs:has(:checked:nth-of-type(4)) { --active: 3; }
+
+.tabs :checked + label { --highlight: 1; }
+
+.tabs:has(input:nth-of-type(2)) { --count: 2; }
+.tabs:has(input:nth-of-type(3)) { --count: 3; }
+.tabs:has(input:nth-of-type(4)) { --count: 4; }
+
+.tabs label {
+	padding: 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
+	cursor: pointer;
+	text-align: center;
+	height: 100%;
+	display: grid;
+	border-radius: calc(var(--radius) - var(--border));
+	place-items: center;
+	color: hsl(0 0% 100% / calc(0.5 + var(--highlight, 0)));
+	transition: background, color;
+  transition-duration: 0.25s;
+  transition-timing-function: var(--ease, ease);
+}
+
+input:not(:checked) + label:hover {
+	--highlight: 0.35;
+	background: hsl(0 0% 20%);
+}
+
+.tabs::after {
+	pointer-events: none;
+	content: "";
+	width: calc(100% / var(--count));
+	height: 100%;
+	background: hsl(0 0% 100%);
+	position: absolute;
+	border-radius: calc(var(--radius) - var(--border));
+	mix-blend-mode: difference;
+	translate: calc(var(--active, 0) * 100%) 0;
+	transition: translate, outline-color;
+  transition-duration: var(--speed);
+  transition-timing-function: var(--ease, ease);
+	outline: 2px solid transparent;
+}
+
+.tabs:has(:focus-visible)::after {
+	outline-color: red;
+}
+
+.snippet-container {
+  display: none;
+}
+.snippet-container.active {
+  display: block;
+}
+
+/* footer */
+.footer {
+  font-family: monospace;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 10px 30px;
+  color: #2f2f2f;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgba(33, 33, 33, 0.164);
+  border-radius: 100px;
+  color: #2f2f2f;
+  line-height: 0;
+  margin: 0.6em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+	flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.nav__ul--extra {
+  column-count: 2;
+  column-gap: 1.25em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+  
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #2f2f2f;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
+
+/* preloader */
+
+.preloader {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,1);
+  transition: opacity .1s;
+  transition-delay: 3s;
+  &.is-loaded {
+    pointer-events: none;
+    background: rgba(0,0,0,0);
+    opacity: 0;
+  }
+}
+
+.pl-line {
+  position: absolute;
+  width: 1px;
+  height: 150%;
+  background: rgba(0,0,0,1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  transition: opacity 1s ease-out;
+  .is-loaded &{
+    opacity: 0;
+  }
+  div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    animation: pulse 2s infinite;
+    will-change: transform;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  }
+}
+
+.pl-l, .pl-r {
+  position: absolute;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  will-change: transform;
+  background: rgba(0,0,0,1);
+}
+
+.pl-l {
+  left: -20%;
+  transform: skew(-20deg);
+  .is-loaded &{
+    transform: translateX(-100%) skew(-20deg);
+  }
+}
+
+.pl-r {
+  right: -20%;
+  transform: skew(-20deg);
+  .is-loaded &{
+    transform: translateX(100%) skew(-20deg);
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+        </style>
+  </head>
+  <body>
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <div class="pl-l"></div>
+    <div class="pl-r"></div>
+    <div class="pl-line">
+      <div></div>
+    </div>
+  </div>
+  <!-- NEXT ARROW -->
+  <div class="center-con">
+      <div class="round">
+          <div id="cta">
+            <a href="./ClockArticle.html">
+              <span class="arrow primera next "></span>
+              <span class="arrow segunda next "></span>
+            </a>
+          </div>
+      </div>
+  </div>
+  <!-- HEADER -->
+  <header><a href="https://shrijitraj.netlify.app/"><img src="./snippet/header.png" class="header-image"></a></header> 
+  <!-- PARAGRAPH -->
+    <div class="content">
+        <h1 class="header-title">001: Personal Portfolio</h1>
+      <main>
+        <div class="columns">
+          <div class="column">
+            <div class="outside">
+            </div>
+            <p>
+              <span class="drop"></span>
+              portfolio website is a testament to his web development prowess, skillfully combining HTML, advanced CSS, and intermediate JavaScript. Each site element exudes uniqueness, from smooth animations to dynamic content, creating an engaging, interactive experience for visitors, and reflecting Shrijit's technical talent and aesthetic sensibility.
+            </p>
+            <p>
+                The homepage captivates visitors with a stunning background image transitioning seamlessly into the content section. This design highlights Shrijit's aesthetic sense and his mastery in implementing complex CSS techniques for smooth scrolling and transitions, making the first impression both visually appealing and technically impressive.
+            </p>
+            <p>
+                The navigation bar, positioned at the top right, offers a fully transparent background and transforms into a sleek hamburger menu on smaller screens. This responsive design ensures that the site is easily navigable on any device, showcasing Shrijit's proficiency in creating user-friendly interfaces.
+            </p>
+            <p>
+                A standout feature of the site is the typewriter effect in the introduction section. It dynamically types out phrases like "I am Shrijit Raj" and "I am a Developer," with precise timing and styling, adding a personal and professional touch that captures the visitor's attention right from the start.
+            </p>
+          </div>
+          <div class="column">
+            <div class="outside"></div>
+            <p>
+                The photo gallery section is a visual delight, with images that come to life through hover effects and subtle animations. Each photo is accompanied by a shadow effect that increases its intensity, highlighting Shrijit's skills in CSS for creating visually appealing and interactive elements.
+            </p>
+            <p>
+                The "About Me" section includes a creatively formatted text block that reveals more information as visitors scroll down. This section uses JavaScript to control the visibility of content, adding an interactive layer that keeps visitors engaged.
+            </p>
+            <P>
+                The contact form on the site is designed with usability in mind, featuring placeholders that disappear upon input to streamline the user experience. The form also includes smooth transition effects, making it an inviting and accessible way for visitors to get in touch.
+            </P>
+            <p>
+                Overall, Shrijit Raj's portfolio website is a testament to his expertise in web development. Each element reflects his dedication to creating a professional, user-friendly, and visually appealing online presence.
+            </p>
+          </div>
+        </div>
+      </main>
+  </div>
+  <!-- PREVIEW -->
+  <center><p class="headingp">Preview:</p><a href="https://shrijitraj.netlify.app/"><img src="./snippet/portfolio.gif"></a></center><br><br>
+  <!-- RADIO BUTTON -->
+  <div class="tabs">
+    <input type="radio" id="html" name="fav_language" value="HTML" checked>
+    <label for="html">HTML</label>
+    <input type="radio" id="css" name="fav_language" value="CSS">
+    <label for="css">CSS</label>
+    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+    <label for="javascript">JavaScript</label>
+  </div>
+  <!-- Snippet -->
+  <center class="snippet-container" id="html-snippet">
+      <p class="headingp">HTML code:</p>
+      <img class="snippet" src="./snippet/portfoliohtml.png" width="77%">
+  </center>
+  <center class="snippet-container" id="css-snippet">
+      <p class="headingp">CSS code:</p>
+      <img class="snippet" src="./snippet/portfoliocss.png" width="77%">
+  </center>
+  <center class="snippet-container" id="javascript-snippet">
+      <p class="headingp">JavaScript code:</p>
+      <img class="snippet" src="./snippet/portfoliojs.png" width="77%">
+  </center>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">Shrijit Raj</h1>
+      <h2>Contact</h2>
+      <address>
+      Bhubaneswar, Odisha, India<br>
+      <a class="footer__btn" href="mailto:shrijitraj@gmail.com">Email Me</a>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+      <li class="nav__item">
+        <h2 class="nav__title">Social Media</h2>
+
+        <ul class="nav__ul">
+          <li>
+            <a href="https://github.com/Shrijit007">Github</a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/shrijit-raj/?originalSubdomain=in">LinkedIn</a>
+          </li>
+              
+          <li>
+            <a href="https://www.instagram.com/_shrijitraj/">Instagram</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item nav__item--extra">
+        <h2 class="nav__title">Other Websites</h2>
+        <ul class="nav__ul">
+          <li>
+            <a href="https://shrijitraj.netlify.app/">Portfolio</a>
+          </li>
+          <li>
+            <a href="https://shrijitraj.netlify.app/media">Gallery</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <h2 class="nav__title">Legal</h2>
+        
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="legal">
+      <p>&copy; 2024 Copyright. All rights reserved.</p>
+      
+      <div class="legal__links">
+        <span>Made with <span class="heart">♥</span> by Shrijit Raj</span>
+      </div>
+    </div>
+  </footer>
+  </body>
+  <script>//next button
+    $('.round').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.arrow').toggleClass('bounceAlpha');
+});
+  </script>
+  <script>//snippet toggle
+    function updateSnippets() {
+        document.querySelectorAll('.snippet-container').forEach(function(container) {
+            container.classList.remove('active');
+        });
+
+        if (document.getElementById('html').checked) {
+            document.getElementById('html-snippet').classList.add('active');
+        } else if (document.getElementById('css').checked) {
+            document.getElementById('css-snippet').classList.add('active');
+        } else if (document.getElementById('javascript').checked) {
+            document.getElementById('javascript-snippet').classList.add('active');
+        }
+    }
+
+    document.querySelectorAll('input[name="fav_language"]').forEach(function(radio) {
+        radio.addEventListener('change', updateSnippets);
+    });
+
+    // Initialize the first view
+    updateSnippets();
+  </script>
+  <script>//preloader
+    var _d = document,
+    _p = _d.querySelector('.preloader');
+
+setTimeout(() => {
+  _p.classList.add('is-loaded')
+}, 3000)
+  </script>
+</html>
