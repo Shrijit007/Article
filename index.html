@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Shrijit's | Article #1</title>
-    <link rel="icon" href="./snippet/icon.png">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/009/340/337/original/white-crumpled-paper-balls-for-design-element-png.png">
     <style>
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
@@ -528,9 +528,97 @@ marquee span:before {
   }
 }
 
+/* preloader */
+
+.preloader {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,1);
+  transition: opacity .1s;
+  transition-delay: 3s;
+  &.is-loaded {
+    pointer-events: none;
+    background: rgba(0,0,0,0);
+    opacity: 0;
+  }
+}
+
+.pl-line {
+  position: absolute;
+  width: 1px;
+  height: 150%;
+  background: rgba(0,0,0,1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  transition: opacity 1s ease-out;
+  .is-loaded &{
+    opacity: 0;
+  }
+  div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    animation: pulse 2s infinite;
+    will-change: transform;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  }
+}
+
+.pl-l, .pl-r {
+  position: absolute;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  will-change: transform;
+  background: rgba(0,0,0,1);
+}
+
+.pl-l {
+  left: -20%;
+  transform: skew(-20deg);
+  .is-loaded &{
+    transform: translateX(-100%) skew(-20deg);
+  }
+}
+
+.pl-r {
+  right: -20%;
+  transform: skew(-20deg);
+  .is-loaded &{
+    transform: translateX(100%) skew(-20deg);
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
     </style>
   </head>
   <body>
+    <div class="preloader">
+      <div class="pl-l"></div>
+      <div class="pl-r"></div>
+      <div class="pl-line">
+        <div></div>
+      </div>
+    </div>
     <div class="blog">
         <div class="blog-part is-menu">
          <a href="https://shrijitraj.netlify.app/" class="blog-menu">
@@ -624,16 +712,25 @@ marquee span:before {
             <div class="blog-right-page"><h4>03. <a href="#">Weather App  Article⤤</a></h4></div>
            </div>
            <div class="blog-right-page-title">Weather Web App: </div>
-           <div class="blog-right-page-subtitle">Real-Time Updates with API Integration Using HTML, CSS, and JavaScript<br><br><br>    </div>
+           <div class="blog-right-page-subtitle">Real-Time Updates with API Integration Using HTML, CSS, and JavaScript.</div>
           </div>
+          <div class="blog-right-container">
+            <div class="blog-title-date">
+             <div class="blog-right-page"><h4>04. <a href="./ClockArticle.html">Blog Website Article⤤</a></h4></div>
+            </div>
+            <div class="blog-right-page-title">Blog Website: </div>
+            <div class="blog-right-page-subtitle">A collection of insightful articles with clean and minimalist design ensures a pleasant reading experience.</div>
+           </div>
+          <br><br><br><br><br><br><br><br><br><br><br>
           <div class="blog-right-container">
            <div class="blog-title-date">
             <div class="blog-right-page"></div>
             <div class="date">12.06.2021</div>
            </div>
-           <div class="blog-right-page-title">A24 IS LAUNCHING ITS OWN BEAUTY BRAND</div>
-           <div class="blog-right-page-subtitle">Blonde received widespread acclaim, with critics praising Ocean's introspective lyrics and the album's</div>
+           <div class="blog-right-page-title">.......</div>
+           <div class="blog-right-page-subtitle">.......</div>
           </div>
+          
 
           <div class="circle">
            <div class="circle-title">Leave Your Old Life Behind</div>
@@ -644,4 +741,12 @@ marquee span:before {
         </div>
        </div>
   </body>
+  <script>//preloader
+    var _d = document,
+    _p = _d.querySelector('.preloader');
+
+setTimeout(() => {
+  _p.classList.add('is-loaded')
+}, 3000)
+  </script>
 </html>
