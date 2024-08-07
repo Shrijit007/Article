@@ -5,6 +5,17 @@
     <style>
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
+/* selection text */
+::-moz-selection {
+  color: white;
+  background: orange;
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -110,6 +121,10 @@ body {
   display: flex;
   letter-spacing: -0.5px;
   align-items: center;
+}
+
+.blog-menu:hover{
+  font-style: italic;
 }
 
 @media screen and (max-width: 1260px) {
@@ -428,6 +443,11 @@ marquee span:before {
   row-gap: 10px;
 }
 
+.blog-right-page:hover{
+  font-style: italic;
+  text-decoration: none;
+}
+
 .blog-right-image-container img {
   object-fit: cover;
   width: 100%;
@@ -628,8 +648,8 @@ marquee span:before {
           </svg>
          </a>
          <a href="https://www.linkedin.com/in/shrijit-raj?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="blog-menu">LinkedIn</a>
-         <a href="https://x.com/shrijitraj?s=11" class="blog-menu">Twitter</a>
-         <a href="https://x.com/shrijitraj?s=11" class="blog-menu">Github</a>
+         <a href="https://x.com/shrijitraj?s=11" class="blog-menu">Twitter  </a>
+         <a href="https://github.com/Shrijit007" class="blog-menu">Github</a>
          <a href="https://www.instagram.com/_shrijitraj" class="blog-menu mention">@ShrijitRaj</a>
          <a href="#" class="blog-menu subscribe">Follow</a>
         </div>
