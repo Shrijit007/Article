@@ -1,5 +1,5 @@
 
-# Blog/Article Website  
+# Blog/Article Website  🖋️
 
 This repository contains the source code for a **Blog/Article Website** built using HTML, CSS, and JavaScript. The website showcases a collection of articles that not only serve as blogs but also provide links to descriptions and source codes of various projects.  
 
