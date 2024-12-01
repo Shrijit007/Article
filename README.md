@@ -21,7 +21,7 @@ The site is deployed on **Netlify** and can be accessed [here](https://shrijitra
 Visit the live website: [Blog/Article Website](https://shrijitraj-article1.netlify.app/)  
 
 ## Preview
-<img src="https://github.com/Shrijit007/Portfolio/blob/main/Image/blog.png?raw=true">
+<img src="https://github.com/user-attachments/assets/a23b651c-63b4-49d2-a198-e5a1b6fb0a0a">
 
 ## Structure  
 
